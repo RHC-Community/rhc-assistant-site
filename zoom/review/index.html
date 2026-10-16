@@ -15,7 +15,7 @@
 </header>
 <main>
 <h1>Test plan for Zoom Marketplace review</h1>
-<p>Meeting Assistant joins a Zoom meeting as a participant, through the Meeting SDK, to run a shared timer and post announcements, controlled from the meeting chat. In a meeting hosted on another Zoom account it can only join On Behalf Of a signed-in user who is in that meeting. This page walks through adding it, using it and removing it, and shows where each requested scope is used.</p>
+<p>Meeting Assistant joins a Zoom meeting as a participant, through the Meeting SDK, to show slides, run a shared timer and post announcements, controlled from the meeting chat. In a meeting hosted on another Zoom account it can only join On Behalf Of a signed-in user who is in that meeting. This page walks through adding it, using it and removing it, and shows where each requested scope is used.</p>
 
 <h2>What you need</h2>
 <ul>
@@ -34,17 +34,18 @@
 <h2>User A: add, use and remove the app</h2>
 <ol>
 <li><strong>Add (authorize).</strong> Open <a href="https://zoom.rhccommunity.com">zoom.rhccommunity.com</a> and press <em>Sign in with Zoom</em>. Zoom shows the permissions; press <em>Allow</em>. You're returned to the page, signed in, with a form to bring the assistant into a meeting.</li>
-<li><strong>Start a meeting.</strong> With the same Zoom account, start a meeting (or join one hosted by someone else). Keep the chat open to everyone.</li>
+<li><strong>Start a meeting.</strong> With the same Zoom account, start a meeting (or join one hosted by someone else). Keep the chat open to everyone, and allow all participants to share their screen (<em>Share Screen</em> → <em>Who can share?</em> → <em>All participants</em>), which the slides need.</li>
 <li><strong>Bring the assistant in.</strong> On the page, paste the meeting's invite link, or enter its meeting ID and passcode, and press <em>Join</em>. The page shows its progress. If you aren't in the meeting yet, it says it's waiting for you, for up to 10 minutes. If the meeting has a waiting room, admit <em>Meeting Assistant</em>.</li>
 <li><strong>Announcement.</strong> Shortly after it joins, the assistant posts a welcome message in the meeting chat.</li>
 <li><strong>Chat commands.</strong> Send these in the chat, to everyone or directly to Meeting Assistant. It answers by direct message.
 <ul>
 <li><code>help</code>: lists the commands you can use.</li>
 <li><code>timer</code>: shows a countdown in the assistant's video. Its reply lists the controls: <code>s</code> starts or stops it, <code>r</code> resets it, a number such as <code>3</code> sets it to 3 minutes, and <code>c</code> closes it.</li>
+<li><code>slides</code>: the assistant shares a set of slides on screen. Its reply lists the controls: <code>n</code> for the next slide, <code>b</code> to go back, a slide number to jump to it, and <code>s</code> to stop. <code>help</code> lists the rest.</li>
 <li><code>lock timer</code> (host or co-host): only hosts and co-hosts can then work the timer. <code>unlock timer</code> opens it to everyone again.</li>
 </ul>
 </li>
-<li><strong>A second user.</strong> Have User B join the meeting and send <code>help</code> and <code>timer</code>: participants can work the timer unless it's locked. User B sending <code>leave now</code> is refused, since only hosts and co-hosts can have the assistant leave.</li>
+<li><strong>A second user.</strong> Have User B join the meeting and send <code>help</code> and <code>timer</code>: participants can work the timer unless it's locked. User B sending <code>leave now</code> is refused: from the meeting chat, only hosts and co-hosts can have the assistant leave. (User A, who brought it in, can always have it leave from the web page, as in step 7.)</li>
 <li><strong>Have it leave.</strong> As User A (host), send <code>leave</code>; the assistant asks you to confirm, and <code>leave now</code> makes it leave. Or bring it in again (step 3) and press <em>Ask it to leave</em> on the page. It also leaves when the meeting ends, or once it's been alone for a while.</li>
 <li><strong>Remove (deauthorize).</strong> Either:
 <ul>
@@ -58,7 +59,10 @@ Afterwards it can no longer join meetings on your behalf, until you sign in with
 <p>Stored: the Zoom user ID and the OAuth tokens, encrypted. A join request (meeting number and status) is kept for 7 days; its passcode is deleted as soon as the assistant picks the request up. Audio, video and chat are never recorded or stored. See the <a href="/privacy/">privacy policy</a>.</p>
 
 <h2>Contact</h2>
-<p><a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a></p>
+<ul>
+<li>Questions about this review: <a href="mailto:matthewc@rhccommunity.com">matthewc@rhccommunity.com</a> (developer).</li>
+<li>User support: <a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a>.</li>
+</ul>
 </main>
 <footer>Meeting Assistant is run by RHC Community. Questions: <a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a></footer>
 </body>
