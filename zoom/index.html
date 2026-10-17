@@ -1,69 +1,229 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Using Meeting Assistant with Zoom</title>
-<meta name="description" content="How to connect, use and disconnect Meeting Assistant with your Zoom account.">
-<link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<header>
-<a class="home" href="/">Meeting Assistant · RHC Community</a>
-<nav><a href="/zoom/" aria-current="page">Using it with Zoom</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/support/">Support</a></nav>
-</header>
-<main>
-<h1>Using Meeting Assistant with Zoom</h1>
-<p class="updated">Updated 16 October 2026</p>
-<p>Meeting Assistant joins Zoom meetings as a participant, to keep time and show the meeting's materials. In a meeting on its own Zoom account it can do this by itself. In a meeting hosted on <em>another</em> account, Zoom only lets it in on behalf of someone who has connected their Zoom account and is in that meeting. This page covers connecting, using and disconnecting your account for that.</p>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Using Meeting Assistant with Zoom</title>
+    <meta
+      name="description"
+      content="How to connect, use and disconnect Meeting Assistant with your Zoom account."
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="home" href="../">Meeting Assistant · RHC Community</a>
+      <nav>
+        <a href="../zoom/" aria-current="page">Using it with Zoom</a
+        ><a href="../privacy/">Privacy</a><a href="../terms/">Terms</a
+        ><a href="../support/">Support</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Using Meeting Assistant with Zoom</h1>
+      <p class="updated">Updated 16 October 2026</p>
 
-<h2>Adding it: connecting your Zoom account</h2>
-<ol>
-<li>Open <a href="https://zoom.rhccommunity.com/">zoom.rhccommunity.com</a> (or press <strong>Visit Site to Add</strong> on the assistant's Zoom Marketplace listing) and choose <strong>Sign in with Zoom</strong>.</li>
-<li>Zoom shows what the assistant is asking for; sign in and allow it.</li>
-<li>You're returned to the assistant's page, signed in.</li>
-</ol>
-<p>The assistant is for groups that use it with RHC Community. If the page says your Zoom account can't bring it into meetings yet, email <a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a> to ask for access. If anything else goes wrong, see <a href="#troubleshooting">Troubleshooting</a>.</p>
-<p>The assistant asks Zoom for two permissions: to see your basic profile, so it can tell your connection apart from anyone else's (it keeps only your Zoom user ID, not your name or email), and to request a one-meeting "on behalf of" token, which is what lets it follow you into a meeting. It can't see your meetings, recordings, contacts or messages.</p>
+      <p>
+        Meeting Assistant operates primarily in meetings hosted on its own Zoom
+        account. By request, we have expanded the app so that it can be added to
+        meetings hosted on other accounts as well.
+      </p>
+      <p>
+        For that to work, someone who is already in the meeting has to add the
+        app to the meeting each time. This page covers how that works, including
+        connecting, using and disconnecting your account.
+      </p>
 
-<h2>Using it</h2>
-<ol>
-<li>Join the Zoom meeting yourself.</li>
-<li>On <a href="https://zoom.rhccommunity.com/">zoom.rhccommunity.com</a>, paste the meeting's link (or its number and passcode) and press <strong>Join</strong>.</li>
-<li>It asks Zoom for a token for that meeting, on your behalf, and joins as a participant under its own name. If you aren't in the meeting yet, the page says it's waiting for you, for up to 10 minutes.</li>
-<li>If the meeting has a waiting room, the host admits it like anyone else.</li>
-</ol>
-<h3>In the meeting</h3>
-<p>Send it commands in the meeting chat, to everyone or directly to <em>Meeting Assistant</em>. It answers by direct message. For that, the meeting's chat has to let participants message everyone or each other.</p>
-<ul>
-<li><code>help</code>: lists the commands you can use.</li>
-<li><code>slides</code>: shares the meeting's slides on screen, such as readings or the meeting format. In a meeting that isn't set up with slides, it says what's available instead: <code>slides demo</code> for a demonstration set, and <code>doc list</code> for any documents offered. The reply lists the controls: <code>n</code> for the next slide, <code>b</code> to go back, a slide number to jump to it, and <code>s</code> to stop. For this, the host has to allow all participants to share their screen.</li>
-<li><code>timer</code>: shows a countdown timer in its video, for timing shares. The reply lists the controls: <code>s</code> starts or stops it, <code>r</code> resets it, a number sets its length in minutes, and <code>c</code> closes it.</li>
-<li><code>lock timer</code> or <code>unlock timer</code> (hosts and co-hosts): keeps the timer to hosts and co-hosts, or opens it to everyone.</li>
-<li><code>leave</code> (hosts and co-hosts): asks it to leave the meeting. Confirm with <code>leave now</code>.</li>
-</ul>
-<p>It can also post announcements in the chat, such as a welcome when it joins.</p>
-<p>It joins as an ordinary participant, so it can't mute, admit or remove people. It leaves when you press <strong>Ask it to leave</strong>, when a host sends <code>leave now</code>, when the meeting ends, or when it's been alone for a while.</p>
+      <p>
+        <strong>Note:</strong> Meeting Assistant currently runs on a small
+        server and can only be in one meeting at a time.
+      </p>
 
-<h2>Removing it: disconnecting your Zoom account</h2>
-<p>Either of these deletes your connection and the tokens straight away:</p>
-<ul>
-<li>On <a href="https://zoom.rhccommunity.com/">zoom.rhccommunity.com</a>, press <strong>Remove Meeting Assistant's access to my Zoom</strong>. It also tells Zoom to revoke its access.</li>
-<li>In Zoom: sign in at <a href="https://marketplace.zoom.us/user/installed">marketplace.zoom.us</a>, open <strong>Manage → Added Apps</strong>, and remove Meeting Assistant. Zoom tells the assistant, which deletes what it holds about you.</li>
-</ul>
-<p>After that, it can no longer join meetings on your behalf, and it leaves nothing behind on your Zoom account. The only record left is of the meetings you asked it to join (the meeting number and how the join went, never the passcode), which is deleted within 7 days. You can connect again at any time.</p>
+      <h2>Connecting your Zoom account</h2>
+      <ol>
+        <li>
+          Open
+          <a href="https://zoom.rhccommunity.com" target="_blank"
+            >zoom.rhccommunity.com</a
+          >
+          and choose <strong>Sign in with Zoom</strong>.
+        </li>
+        <li>
+          Zoom shows the requested permissions, click allow. (None of the
+          optional permissions are needed, those are defaults added by Zoom.)
+        </li>
+        <li>You will then return to the Meeting Assistant page, signed in.</li>
+      </ol>
+      <p>
+        Meeting Assistant is a tool provided for use by RHC Community group
+        volunteers. If the page says your Zoom account can't add it to meetings
+        yet,
+        <a href="mailto:meeting.assistant@rhccommunity.com">email us</a> or
+        <a href="https://wa.me/4506007700" target="_blank"
+          >message on WhatsApp</a
+        >
+        to ask for access. For any other issues, see
+        <a href="#troubleshooting">Troubleshooting</a>.
+      </p>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
-<ul>
-<li><strong>"Waiting for you to join the meeting"</strong>: join the meeting yourself first. For a meeting on another Zoom account, the assistant can only follow someone in.</li>
-<li><strong>It's in the waiting room</strong>: the host needs to admit it.</li>
-<li><strong>It doesn't answer commands</strong>: check the meeting's chat lets participants message everyone or each other. Hosts can change this under <em>Chat → … → Participants can chat with</em>.</li>
-<li><strong>The slides don't appear</strong>: the host needs to allow all participants to share their screen (<em>Share Screen</em> → <em>Who can share?</em> → <em>All participants</em>), and nobody else can be sharing at the time.</li>
-<li><strong>Your connection lapsed</strong> (it's been unused for 90 days, or you removed it): sign in with Zoom again; nothing else is needed.</li>
-<li><strong>Your account can't bring it into meetings</strong>: email <a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a> to ask for access.</li>
-</ul>
-<p>Anything else: see <a href="/support/">Support</a>.</p>
-</main>
-<footer>Meeting Assistant is run by RHC Community. Questions: <a href="mailto:meeting.assistant@rhccommunity.com">meeting.assistant@rhccommunity.com</a></footer>
-</body>
+      <h2>Using it</h2>
+      <ol>
+        <li>
+          First, join the Zoom meeting yourself. Meeting Assistant can only join
+          meetings you are in.
+        </li>
+        <li>
+          On
+          <a href="https://zoom.rhccommunity.com" target="_blank"
+            >zoom.rhccommunity.com</a
+          >, paste the meeting link (or the meeting ID and passcode) and press
+          <strong>Join</strong>.
+        </li>
+        <li>
+          Meeting Assistant then asks Zoom for a token to let it join the
+          meeting on your behalf. It joins as a separate participant under its
+          own name.
+        </li>
+        <li>
+          Meeting Assistant can only join if you are already in the meeting. It
+          will wait for you and keep trying for up to 10 minutes if you're not
+          in the meeting yet.
+        </li>
+        <li>
+          If the meeting has a waiting room, the host has to admit the app like
+          any other participant.
+        </li>
+      </ol>
+      <h3>In the meeting</h3>
+      <p>
+        After joining the meeting, if the main chat is open, Meeting Assistant
+        will post an introduction saying what it is, how to use it, and to let
+        participants know that it does not record any meeting content.
+      </p>
+      <p>
+        To use it, send commands in the meeting chat or via direct message to
+        <em>Meeting Assistant</em>. The available commands will depend on the
+        meeting settings, and whether or not you are a host or co-host.
+      </p>
+      <ul>
+        <li><code>help</code>: lists the commands you can use.</li>
+        <li>
+          <code>slides</code>: shares the meeting's slides on screen, such as
+          readings or the meeting format.
+          <ul>
+            <li>
+              Slides are only available if the host allows participants to share
+              their screen.
+            </li>
+            <li>
+              Currently slides have to be pre-set for your meeting ID by the RHC
+              Community team.
+            </li>
+            <li>
+              Once slides are displayed, the app lists the available controls,
+              <code>n</code> for the next slide, <code>b</code> to go back, a
+              number to jump to a specific slide, or <code>s</code> to stop.
+            </li>
+          </ul>
+        </li>
+
+        <li><code>slides demo</code>: shows a demonstration set of slides</li>
+        <li>
+          <code>doc list</code>: lists the library of community resources
+          available to display in meetings.
+        </li>
+        <li>
+          <code>timer</code>: shows a countdown timer, for timing shares or
+          speakers.
+          <ul>
+            <li>
+              Like with slides, the reply then lists the controls:
+              <code>s</code> starts or stops the timer, <code>r</code> resets
+              it, a number sets the timer length in minutes, and
+              <code>c</code> closes the timer.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <code>lock timer</code> or <code>unlock timer</code> (hosts and
+          co-hosts): keeps the timer to hosts and co-hosts, or opens it to
+          everyone.
+        </li>
+        <li>
+          <code>leave</code> (hosts and co-hosts): asks it to leave the meeting.
+          Confirm with <code>leave now</code>.
+        </li>
+      </ul>
+      <p>
+        Meeting Assistant will leave the meeting when you press
+        <strong>Ask it to leave</strong>, on the web page or when a host
+        messages it the <code>leave now</code> command.
+      </p>
+
+      <h2>Removing Meeting Assistant from your Zoom account</h2>
+      <p>
+        There are two ways to remove Meeting Assistant from your account. Both
+        will immediately and permanently delete the connection:
+      </p>
+      <ul>
+        <li>
+          On
+          <a href="https://zoom.rhccommunity.com" target="_blank"
+            >zoom.rhccommunity.com</a
+          >, press
+          <strong>Remove Meeting Assistant's access to my Zoom</strong>.
+        </li>
+        <li>
+          In Zoom: sign in at
+          <a href="https://marketplace.zoom.us/user/installed" target="_blank"
+            >marketplace.zoom.us</a
+          >, open <strong>Manage → Added Apps</strong>, and remove Meeting
+          Assistant. Zoom tells the assistant, which deletes what it holds about
+          you.
+        </li>
+      </ul>
+      <p>
+        After that, it can no longer join meetings on your behalf and all
+        records of your Zoom account ID are removed. See
+        <a href="../privacy/">privacy</a> for details of what is kept and for
+        how long. You can connect again at any time.
+      </p>
+
+      <h2 id="troubleshooting">Troubleshooting</h2>
+      <ul>
+        <li>
+          <strong>"Waiting for you to join the meeting"</strong>: join the
+          meeting yourself first.
+        </li>
+        <li>
+          <strong>It's in the waiting room</strong>: the host needs to admit it.
+        </li>
+        <li>
+          <strong>It doesn't answer commands</strong>: check the meeting's chat
+          lets participants message everyone or each other. Hosts can change
+          this under <em>Chat → … → Participants can chat with</em>.
+        </li>
+        <li>
+          <strong>The slides don't appear</strong>: the host needs to allow all
+          participants to share their screen (<em>Share Screen</em> →
+          <em>Who can share?</em> → <em>All participants</em>), and nobody else
+          can be sharing at the time.
+        </li>
+        <li>
+          <strong>Your connection lapsed</strong>: sign in with Zoom again.
+        </li>
+        <li>
+          <strong>Your account can't add the app to meetings</strong>: email or
+          WhatsApp message us to ask for access.
+        </li>
+      </ul>
+      <p>For any other issues, see <a href="../support/">Support</a>.</p>
+    </main>
+    <footer>
+      Meeting Assistant is run by RHC Community. Questions:
+      <a href="mailto:meeting.assistant@rhccommunity.com"
+        >meeting.assistant@rhccommunity.com</a
+      >
+    </footer>
+  </body>
 </html>
